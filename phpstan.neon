@@ -1,0 +1,16 @@
+parameters:
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    ignoreErrors:
+        - '#Call to an undefined method Interop\\Container\\ContainerInterface|Prophecy\\Prophecy\\ObjectProphecy#'
+        - '#PHPDoc tag @throws with type Interop\\Container\\Exception\\ContainerException is not subtype of Throwable#'
+    autoload_files:
+        - %rootDir%/../../../vendor/codeception/codeception/autoload.php
+    excludes_analyse:
+        - %currentWorkingDirectory%/src/*/tests/_support/_generated/*
+        - %currentWorkingDirectory%/tests/tests/acceptance/*
+        - %currentWorkingDirectory%/tests/tests/_support/_support/*
+        - %currentWorkingDirectory%/tests/tests/_support/*.php
+includes:
+    - ../../phpstan/phpstan-doctrine/extension.neon
+    - ../../phpstan/phpstan-phpunit/extension.neon
